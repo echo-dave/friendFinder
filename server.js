@@ -19,7 +19,7 @@ var options = {
     maxAge: '1d',
     redirect: false,
 }
-app.use(express.static('public', options));
+//app.use(express.static('app/public', options));
 
 //routing
 require('./app/routing/apiRoutes')(app);
@@ -27,7 +27,7 @@ require('./app/routing/htmlRoutes')(app);
 
 //404 not found routing
 app.use(function (req, res) {
-    res.status(404).sendFile(__dirname + "/public/404.html");
+    res.status(404).sendFile(__dirname + "/app/public/404.html");
 });
 
 
