@@ -1,13 +1,32 @@
 //define and include dependencies
 const express = require('express');
-
+//mysql related dependencies + mysql2
+require("dotenv").config();
+const keys = require("./app/data/keys.js");
+const Sequelize = require('sequelize');
 
 //Start express sever
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+//MySQL connection 
+const sequelize = new Sequelize(keys.db.database,keys.db.username,keys.db.password, {
+    host: keys.db.host,
+    port:3306,
+    dialect: keys.db.dialect
+});
+
+//MySQL test connection
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
 //data parsers
-//handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -19,9 +38,10 @@ var options = {
     maxAge: '1d',
     redirect: false,
 }
-//app.use(express.static('app/public', options));
 
 //routing
+app.use(express.static('app/public', options));
+
 require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
 

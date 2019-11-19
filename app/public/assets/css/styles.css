@@ -1,0 +1,19 @@
+h1 {
+    text-align:center;
+}
+.block {
+    display:block;
+    margin-top: .25em;
+}
+
+.main {
+    padding:2rem 0;
+}
+
+.select {
+    margin-top:1em;
+}
+
+.label {
+    margin-top:1em;
+}
