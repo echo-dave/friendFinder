@@ -10,11 +10,17 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 //MySQL connection 
-const sequelize = new Sequelize(keys.db.database,keys.db.username,keys.db.password, {
+const mysqlU = keys.db.username;
+const sequelize = new Sequelize(keys.db.database,mysqlU,keys.db.password, {
     host: keys.db.host,
     port:3306,
-    dialect: keys.db.dialect
+    dialect: keys.db.dialect,
+    define: {freezeTableName: true}
 });
+
+const friends = sequelize.import("models/friends_models.js");
+const score = sequelize.import("models/score_models.js");
+sequelize.sync();
 
 //MySQL test connection
 sequelize

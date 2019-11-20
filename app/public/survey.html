@@ -17,205 +17,210 @@
         <h1 class="title is-1">Friend Finding Survey!</h1>
         <div class="columns is-centered">
             <div class="column is-narrow">
-                <div class="box">
+                <form action="/api/submit" method="post">
+                    <div class="box">
 
-                    <span class="title is-2">About You</span>
-                    <div class="field">
+                        <span class="title is-2">About You</span>
+                        <div class="field">
 
-                        <label class="label"for="name">Name</label>
-                        <div class="control">
-                            <input class="input" type="text" name="name" id="name">
+                            <label class="label" for="name">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" name="name" id="name">
+                            </div>
+
+                            <label class="label" for="photo">Link to Photo</label>
+                            <div class="control">
+                                <input class="input" type="text" name="photo" id="photo">
+                            </div>
                         </div>
+                    </div>
+                    <div class="question box">
+                        <label for="q1">
+                            <span class="title is-2">Question 1:</span>
+                            <span class="block">Your mind is always buzzing with unexplored ideas and
+                                plans.</span></label>
 
-                        <label class="label" for="photo">Link to Photo</label>
-                        <div class="control">
-                            <input class="input" type="text" name="photo" id="photo">
+                        <div class="select">
+                            <select name="q1" id="q1">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
                         </div>
                     </div>
-                </div>
-                <div class="question box">
-                    <label for="q1">
-                        <span class="title is-2">Question 1:</span>
-                        <span class="block">Your mind is always buzzing with unexplored ideas and plans.</span></label>
 
-                    <div class="select">
-                        <select name="" id="q1">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                    <div class="question box">
+                        <label for="q2">
+                            <span class="title is-2">Question 2:</span>
+                            <span class="block">Generally speaking, you rely more on your experience than your
+                                imagination.</span>
+                        </label>
+
+                        <div class="select">
+                            <select name="q2" id="q2">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="question box">
-                    <label for="q2">
-                        <span class="title is-2">Question 2:</span>
-                        <span class="block">Generally speaking, you rely more on your experience than your
-                            imagination.</span>
-                    </label>
+                    <div class="question box">
+                        <label for="q3">
+                            <span class="title is-2">Question 3:</span>
+                            <span class="block">You find it easy to stay relaxed and focused even when there is some
+                                pressure.
+                            </span>
+                        </label>
 
-                    <div class="select">
-                        <select name="" id="q2">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                        <div class="select">
+                            <select name="q3" id="q3">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="question box">
-                    <label for="q3">
-                        <span class="title is-2">Question 3:</span>
-                        <span class="block">You find it easy to stay relaxed and focused even when there is some
-                            pressure.
-                        </span>
-                    </label>
+                    <div class="question box">
+                        <label for="q4">
+                            <span class="title is-2">Question 4:</span>
+                            <span class="block">You rarely do something just out of sheer curiosity.
+                            </span>
+                        </label>
 
-                    <div class="select">
-                        <select name="" id="q3">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                        <div class="select">
+                            <select name="q4" id="q4">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="question box">
-                    <label for="q4">
-                        <span class="title is-2">Question 4:</span>
-                        <span class="block">You rarely do something just out of sheer curiosity.
-                        </span>
-                    </label>
+                    <div class="question box">
+                        <label for="q5">
+                            <span class="title is-2">Question 5:</span>
+                            <span class="block">People can rarely upset you.
+                            </span>
+                        </label>
 
-                    <div class="select">
-                        <select name="" id="q4">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                        <div class="select">
+                            <select name="q5" id="q5">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="question box">
-                    <label for="q5">
-                        <span class="title is-2">Question 5:</span>
-                        <span class="block">People can rarely upset you.
-                        </span>
-                    </label>
+                    <div class="question box">
+                        <label for="q6">
+                            <span class="title is-2">Question 6:</span>
+                            <span class="block">It is often difficult for you to relate to other people’s feelings.
+                            </span>
+                        </label>
 
-                    <div class="select">
-                        <select name="" id="q5">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                        <div class="select">
+                            <select name="q6" id="q6">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="question box">
-                    <label for="q6">
-                        <span class="title is-2">Question 6:</span>
-                        <span class="block">It is often difficult for you to relate to other people’s feelings.
-                        </span>
-                    </label>
 
-                    <div class="select">
-                        <select name="" id="q6">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                    <div class="question box">
+                        <label for="q7">
+                            <span class="title is-2">Question 7:</span>
+                            <span class="block">In a discussion, truth should be more important than people’s
+                                sensitivities.
+                            </span>
+                        </label>
+
+                        <div class="select">
+                            <select name="q7" id="q7">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
+                    <div class="question box">
+                        <label for="q8">
+                            <span class="title is-2">Question 8:</span>
+                            <span class="block">You rarely get carried away by fantasies and ideas.
+                            </span>
+                        </label>
 
-                <div class="question box">
-                    <label for="q7">
-                        <span class="title is-2">Question 7:</span>
-                        <span class="block">In a discussion, truth should be more important than people’s sensitivities.
-                        </span>
-                    </label>
-
-                    <div class="select">
-                        <select name="" id="q7">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                        <div class="select">
+                            <select name="q8" id="q8">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="question box">
-                    <label for="q8">
-                        <span class="title is-2">Question 8:</span>
-                        <span class="block">You rarely get carried away by fantasies and ideas.
-                        </span>
-                    </label>
+                    <div class="question box">
+                        <label for="q9">
+                            <span class="title is-2">Question 9:</span>
+                            <span class="block">You think that everyone’s views should be respected regardless of
+                                whether
+                                they are supported by facts or not.
+                            </span>
+                        </label>
 
-                    <div class="select">
-                        <select name="" id="q8">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                        <div class="select">
+                            <select name="q9" id="q9">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="question box">
-                    <label for="q9">
-                        <span class="title is-2">Question 9:</span>
-                        <span class="block">You think that everyone’s views should be respected regardless of whether
-                            they are supported by facts or not.
-                        </span>
-                    </label>
+                    <div class="question box">
+                        <label for="q10">
+                            <span class="title is-2">Question 10:</span>
+                            <span class="block">You feel more energetic after spending time with a group of people.
+                            </span>
+                        </label>
 
-                    <div class="select">
-                        <select name="" id="q9">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                        <div class="select">
+                            <select name="q10" id="q10">
+                                <option value="1">1(strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5(strongly agree)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-
-                <div class="question box">
-                    <label for="q10">
-                        <span class="title is-2">Question 10:</span>
-                        <span class="block">You feel more energetic after spending time with a group of people.
-                        </span>
-                    </label>
-
-                    <div class="select">
-                        <select name="" id="q10">
-                            <option value="1">1(strongly disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5(strongly agree)</option>
-                        </select>
+                    <div class="control">
+                        <input class="button is-large is-primary" type="submit" id="submitBtn" />
                     </div>
-                </div>
-                <div class="control">
-                    <button class="button is-large is-primary" type="submit" id="submitBtn">Submit</button>
-                </div>
+                </form>
             </div>
 
         </div>
