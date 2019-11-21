@@ -3,20 +3,21 @@ module.exports = function (app) {
         let formData = req.body;
         console.log(formData);
         // res.status(200).send(formData);
-        let newID
+        let newUId
         friends.create({
             name: formData.name,
             photo: formData.photo
         }).then(function (friends) {
             if (friends) {
              //   res.send(friends);
-                newID = friends.id;
+             //new user id
+                newUId = friends.id;
             } else {
                 res.status(400).send('error inserting');
             }
         }).then(function () {
             score.create({
-                id: newID,
+                id: newUId,
                 q1: formData.q1,
                 q2: formData.q2,
                 q3: formData.q3,
@@ -62,25 +63,29 @@ function absDiff (uArray, cArray){
  data = query response array
  uArray = current user comparison
  c = friends id */
+ let resultArray = [];
+ let friendsArray = [[],[]];
 for (let c = 0; c < data.length; c++) {
     console.log("data index " + c);
     //answers looping
     for (let i = 1; i < 11; i++) {
       if (!resultArray[i] && resultArray[i] !== 0 ) {
-        resultArray.push(Math.abs(Object.entries(data[c])[i][1] - Object.entries(uArray[c])[i][1]));
+        resultArray.push(Math.abs(Object.entries(data[c])[i][1] - Object.entries(uArray[newUId])[i][1]));
         console.log("pusing");
         console.log("push index " + i);
         console.log(resultArray);
       } else {
-        resultArray[i] = (Math.abs(Object.entries(data[c])[i][1] - Object.entries(uArray[c])[i][1]));
+        resultArray[i] = (Math.abs(Object.entries(data[c])[i][1] - Object.entries(uArray[newUId])[i][1]));
         console.log("replacing");
         console.log("replace index " + i);
         console.log(resultArray);
       }
     }
+    //friend identifying index value
+    let uId = Object.entries(data[c])[0][1];
     //reduce funtion for summing results array
     const sum = function(accumulator, currentValue){return accumulator + currentValue};
-    //summing the results array
-    let friendsArray = [];
-    friendsArray.push(resultArray.reduce(sum));
+    //summing the results array [uID , comparison value]
+    friendsArray[0].push(uId);
+    friendsArray[1].push(resultArray.reduce(sum));
   }
