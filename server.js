@@ -9,6 +9,9 @@ const Sequelize = require('sequelize');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+const Op = Sequelize.Op;
+
+
 //MySQL connection 
 const mysqlU = keys.db.username;
 const sequelize = new Sequelize(keys.db.database,mysqlU,keys.db.password, {
@@ -22,7 +25,7 @@ const sequelize = new Sequelize(keys.db.database,mysqlU,keys.db.password, {
 
 const friends = sequelize.import("models/friends_models.js");
 const score = sequelize.import("models/score_models.js");
-//sequelize.sync();
+sequelize.sync();
 
 //MySQL test connection
 sequelize
