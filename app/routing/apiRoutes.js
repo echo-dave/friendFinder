@@ -34,12 +34,53 @@ module.exports = function (app) {
                     res.status(400).send('error inserting');
                 };
             });
-           
-
-
         });
-
-
-
     });
-}
+app.get("/api/data", function(req,res){
+    score.findAll().then(function(data){
+        console.log("Scores");
+        console.log(data);
+        res.end();
+    });
+});
+
+};
+
+// 
+
+
+
+//for in objects
+function absDiff (uArray, cArray){
+    resultArray[i] = abs(uArray[i] - cArray[i]);
+    
+} ;
+
+
+
+/*  friends row looping
+ data = query response array
+ uArray = current user comparison
+ c = friends id */
+for (let c = 0; c < data.length; c++) {
+    console.log("data index " + c);
+    //answers looping
+    for (let i = 1; i < 11; i++) {
+      if (!resultArray[i] && resultArray[i] !== 0 ) {
+        resultArray.push(Math.abs(Object.entries(data[c])[i][1] - Object.entries(uArray[c])[i][1]));
+        console.log("pusing");
+        console.log("push index " + i);
+        console.log(resultArray);
+      } else {
+        resultArray[i] = (Math.abs(Object.entries(data[c])[i][1] - Object.entries(uArray[c])[i][1]));
+        console.log("replacing");
+        console.log("replace index " + i);
+        console.log(resultArray);
+      }
+    }
+    //reduce funtion for summing results array
+    const sum = function(accumulator, currentValue){return accumulator + currentValue};
+    //summing the results array
+    let friendsArray = [];
+    friendsArray.push(resultArray.reduce(sum));
+  }

@@ -15,12 +15,14 @@ const sequelize = new Sequelize(keys.db.database,mysqlU,keys.db.password, {
     host: keys.db.host,
     port:3306,
     dialect: keys.db.dialect,
-    define: {freezeTableName: true}
+    define: {freezeTableName: true},
+    query:{raw:true}
+
 });
 
 const friends = sequelize.import("models/friends_models.js");
 const score = sequelize.import("models/score_models.js");
-sequelize.sync();
+//sequelize.sync();
 
 //MySQL test connection
 sequelize

@@ -12,7 +12,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         photo: {
             type: DataTypes.STRING(150),
-            allowNull: true
+            allowNull: true,
+            defaultValue: "NULL"
         },
     },{
         timestamps: false
