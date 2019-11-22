@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": process.env.username,
-    "password": process.env.password,
-    "database": process.env.database,
-    "host": process.env.JAWSDB_URL,
+    "username": "process.env.username",
+    "password": "process.env.password",
+    "database": "process.env.database",
+    "host": "process.env.JAWSDB_URL",
     "port": 3306,
     "dialect": "mysql"
   },
@@ -16,10 +16,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": process.env.username,
-    "password": process.env.password,
-    "database": process.env.database,
-    "host": process.env.JAWSDB_URL,
+    "username": "process.env.username",
+    "password": "process.env.password",
+    "database": "process.env.database",
+    "host": "process.env.JAWSDB_URL",
     "port": 3306,
     "dialect": "mysql"
   }

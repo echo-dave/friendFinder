@@ -2,6 +2,9 @@
 const express = require('express');
 //mysql related dependencies + mysql2
 require("dotenv").config();
+var env = process.env.NODE_ENV || "development";
+var config = require(__dirname + "/config/config.json")[env];
+
 const keys = require("./app/data/keys.js");
 const Sequelize = require('sequelize');
 
