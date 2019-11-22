@@ -108,8 +108,23 @@ module.exports = function (app) {
                             friendsArray[1].push(resultArray.reduce(sum));
                             console.log("Friends Sums")
                             console.log(friendsArray);
-                            res.end();
+
+
+                            //res.end();
                         }
+                        let match = Math.min.apply(Math,friendsArray[1].slice(0,-1));
+                        console.log("match value " + match);
+                        
+                         match = friendsArray[1].indexOf(match);
+                        console.log('id of match' + match);
+
+                        friends.findAll({
+                            attributes:["name","photo"],
+                            where:{id: friendsArray[0][match]}
+                        }).then( function(friendMatch){
+                            res.json(friendMatch);
+                        });
+
 
                     });
 

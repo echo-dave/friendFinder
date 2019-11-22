@@ -17,7 +17,8 @@
         <h1 class="title is-1">Friend Finding Survey!</h1>
         <div class="columns is-centered">
             <div class="column is-narrow">
-                <form action="/api/submit" method="post">
+                <!-- <form action="/api/submit" method="post"> -->
+                    <form action="">
                     <div class="box">
 
                         <span class="title is-2">About You</span>
@@ -224,6 +225,33 @@
             </div>
 
         </div>
+
+        <!-- modal -->
+        <div id="modal" class="modal">
+            <div class="modal-background"></div>
+            <div id="friendMatched" class="modal-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, aspernatur perspiciatis ad tempora ex, quaerat fugit repellendus necessitatibus voluptatum libero magni rerum? Molestiae perspiciatis laboriosam, enim excepturi saepe facilis vero!
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        <script>
+
+            $("form").on("submit", function (event) {
+                event.preventDefault();
+                console.log($(this).serialize());
+                $('#modal').addClass("is-active");
+                $.post("/api/submit",$('form').serialize(),function(friendMatch){
+                    console.log("match");
+                    console.log(friendMatch);
+                    $('#friendMatched').html(`<img src="${friendMatch[0].photo}">${friendMatch[0].name}`)
+                });
+            });
+
+          $('.modal-background,.modal-close').on("click", function(){
+                $('#modal').removeClass("is-active");
+            });
+        </script>
 </body>
 
 </html>

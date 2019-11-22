@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
-    <link rel="stylesheet" href="https://www.jsdelivr.com/package/npm/bulma">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Friend Finder Home</title>
 </head>
+
 <body>
-    <h1>home</h1>
+    <div class="container">
+        <div id="header">
+            <h1 class="title is-1">Welcome to Friend Finder</h1>
+            <h2 class="title is-2">Newest Friends:</h2>
+
+        </div>
+
+        <div id="data" class="columns is-centered">
+
+        </div>
+        <div class="columns is-centered">
+            <div class="column box is-narrow goSurvey">
+                <h4 class="title is-4">Take the survey to find your best friend</h4>
+                <a href="/survey"><button id="survey" class="button is-primary is-medium center">Find your
+                        Friend</button></a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        $.get("/api/newest", function (data) {
+            $('#data').append(`<div class="friend column is-narrow box">
+        <img src="${data[0].photo}">${data[0].name}
+        </div>
+        <div class="friend column is-narrow box">
+        <img src="${data[1].photo}">${data[1].name}
+        </div>`
+            );
+            console.log(data);
+        });
+
+    </script>
+
 </body>
+
 </html>
