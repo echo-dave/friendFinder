@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         photo: {
             type: DataTypes.STRING(150),
-            allowNull: true,
+            allowNull: false,
             defaultValue: "NULL"
         },
     },{
