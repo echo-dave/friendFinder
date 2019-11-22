@@ -57,7 +57,7 @@ h1, h2 {
     height: 100vh;
 }
 
-.goSurvey {padding:1.5em;}
+.goSurvey {padding:1.5em;margin-top:1.5em;text-align:center;}
 
 .modal-content {
     background: white;
@@ -66,3 +66,23 @@ h1, h2 {
 }
 
 #api {position: absolute; bottom:5px;left:10px; font-size:.75em;}
+
+
+@media only screen and (max-width:769px) {
+    #data > div.friend {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width:630px) {
+    #header {
+        font-size: .75em!important;
+    }
+    .title.is-1 {
+        font-size:3em;
+    }
+    .title.is-2{
+        font-size:2em;
+    }
+}
