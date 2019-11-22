@@ -12,8 +12,18 @@ const PORT = process.env.PORT || 8080;
 const Op = Sequelize.Op;
 
 
+const mysqlU = process.env.username;
+const sequelize = new Sequelize(process.env.database,mysqlU,process.env.password, {
+    host: process.envhost,
+    port:3306,
+    dialect: "mysql",
+    define: {freezeTableName: true},
+    query:{raw:true}
+
+});
+
 //MySQL connection 
-const mysqlU = keys.db.username;
+/* const mysqlU = keys.db.username;
 const sequelize = new Sequelize(keys.db.database,mysqlU,keys.db.password, {
     host: keys.db.host,
     port:3306,
@@ -21,7 +31,7 @@ const sequelize = new Sequelize(keys.db.database,mysqlU,keys.db.password, {
     define: {freezeTableName: true},
     query:{raw:true}
 
-});
+}); */
 
 const friends = sequelize.import("models/friends_models.js");
 const score = sequelize.import("models/score_models.js");

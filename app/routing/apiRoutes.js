@@ -105,7 +105,8 @@ module.exports = function (app) {
                             const sum = function (accumulator, currentValue) { return accumulator + currentValue };
                             //summing the results array [uID , comparison value]
                             friendsArray[0].push(uId);
-                            friendsArray[1].push(resultArray.reduce(sum, 1));
+                            friendsArray[1].push(resultArray.reduce(sum));
+                            console.log("Friends Sums")
                             console.log(friendsArray);
                             res.end();
                         }
