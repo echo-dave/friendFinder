@@ -2,7 +2,7 @@
 Because everyone could use another friend 😉
 
 ## Technology
-Build on nodejs with a mysql database backend for storing all the persistant data for potential friend finding. Node hadles all the heavy logic with expressjs running the webserver routing requests. Jquery handles the form data and display of the database queries to the page. Bulma takes care of the bulk of the styling on this project.
+Build on nodejs with a mysql database (handled by sequelize ROM) for storing all the persistant data for potential friend finding. Node hadles all the heavy logic with expressjs running the webserver routing requests. Jquery handles the form data and display of the database queries to the page with help from  Bulma for the bulk of the styling on this project.
 
 ## Challenges
 The logic was a bit tricky doign a comparison question by question followed by comparing the collection of answers on a friend by friend basis. The combination of database queries, inserts and logic loops to handle calculations turned out longer and more complex than originally expected. Following that there were some challenges getting everthing running on Heroku with the database credentials do to conflicting methods.
