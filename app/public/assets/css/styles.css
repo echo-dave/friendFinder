@@ -18,6 +18,8 @@ h1, h2 {
     width:150px;
     height:150px;
     overflow: hidden;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .friend img {
