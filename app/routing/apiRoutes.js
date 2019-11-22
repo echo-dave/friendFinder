@@ -112,16 +112,16 @@ module.exports = function (app) {
 
                             //res.end();
                         }
-                        let match = Math.min.apply(Math,friendsArray[1].slice(0,-1));
+                        let match = Math.min.apply(Math, friendsArray[1].slice(0, -1));
                         console.log("match value " + match);
-                        
-                         match = friendsArray[1].indexOf(match);
+
+                        match = friendsArray[1].indexOf(match);
                         console.log('id of match' + match);
 
                         friends.findAll({
-                            attributes:["name","photo"],
-                            where:{id: friendsArray[0][match]}
-                        }).then( function(friendMatch){
+                            attributes: ["name", "photo"],
+                            where: { id: friendsArray[0][match] }
+                        }).then(function (friendMatch) {
                             res.json(friendMatch);
                         });
 
@@ -134,13 +134,25 @@ module.exports = function (app) {
         });
     });
 
-    app.get("/api/newest",function (req,res){
+    app.get("/api/newest", function (req, res) {
         friends.findAll({
-            order:[['id',`DESC`]],
+            order: [['id', `DESC`]],
             attributes: ['name', 'photo'],
-            limit:2
-        }).then(function(data){
-            if(data) {
+            limit: 2
+        }).then(function (data) {
+            if (data) {
+                res.json(data);
+            } else {
+                res.status(500).send(err)
+            }
+        });
+    });
+    app.get("/api/all", function (req, res) {
+        friends.findAll({
+            attributes: ['name', 'photo']
+
+        }).then(function (data) {
+            if (data) {
                 res.json(data);
             } else {
                 res.status(500).send(err)
