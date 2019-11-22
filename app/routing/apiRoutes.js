@@ -118,4 +118,18 @@ module.exports = function (app) {
 
         });
     });
+
+    app.get("/api/newest",function (req,res){
+        friends.findAll({
+            order:[['id',`DESC`]],
+            attributes: ['name', 'photo'],
+            limit:2
+        }).then(function(data){
+            if(data) {
+                res.json(data);
+            } else {
+                res.status(500).send(err)
+            }
+        });
+    });
 }
