@@ -7,7 +7,7 @@ Because everyone could use another friend 😉
 * Sequelize
 * MySQL
 * jQuery
-* Bulma
+* Bulma  
 Built on nodejs with a mysql database (handled by sequelize ROM) for storing all the persistent data for potential friend finding. Node handles all the heavy logic with expressjs running the webserver routing requests. JQuery handles the form data and display of the database queries to the page with help from Bulma for the bulk of the styling on this project.
 
 ## Challenges
