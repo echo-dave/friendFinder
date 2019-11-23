@@ -10,4 +10,4 @@ The logic was a bit tricky doign a comparison question by question followed by c
 ### How it works
 The home page lists the 2 most recent entries. Each new survey gets entered into that database and added to the calculations. Do to some of of the logic used it's possible there may be some odd results under high traffic. Additional database queries and promise chaining would be necessary to propery handle that vs just not comparing against the most recent entry (otherwise surveyers would always match to themselve hah!).
 
-![friend finder](https://github.com/echo-dave/echo-dave.github.io/blob/master/assets/img/projects/friendfind.jpg?raw=true)
+![friend finder](appReadme.jpg)
